@@ -1,0 +1,25 @@
+.gallery-hero {
+  padding-top: 50px;
+  .block-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+}
+
+.gallery-images {
+  padding-bottom: 50px;
+}
+
+.img-wrap{
+  overflow: hidden;
+  a {
+    display: block;
+    transition: transform .3s ease-in;
+  }
+}
+
+.img-wrap a:hover {
+  transform: scale(1.2);
+
+}

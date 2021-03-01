@@ -1,0 +1,127 @@
+@media screen and (max-width: $screen-medium) {
+  .header {
+    .menu-toggle  {
+      display: block;
+    	float: right;
+    	padding: 0 20px;
+      span {
+  			width: 30px;
+  			height: 4px;
+  			background-color: $whiteColor;
+  			position: relative;
+  			display: block;
+  			margin: 30px 0;
+  			&:before, &:after {
+  				position: absolute;
+  				content: "";
+  				display: block;
+  				width: 30px;
+  				height: 4px;
+  				background-color: $whiteColor;
+  				left: 0;
+  				right: 0;
+  				transition: transform .3s ease-in;
+  			}
+  			&:before {
+  				top: -10px
+  			}
+  			&:after {
+  				bottom: -10px;
+  			}
+  		}
+    }
+    .nav {
+      &__opened {
+        .menu-toggle {
+          span {
+				    background-color: transparent;
+				    &:before {
+					    transform-origin: 0 0;
+					    transform: rotate(45deg);
+					    border-radius: 50%;
+				    }
+				    &:after {
+					    transform-origin: 0 100%;
+					    transform: rotate(-45deg);
+					    border-radius: 50%;
+				    }
+			    }
+        }
+      }
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      min-width: 100%;
+      right: 0;
+      top: 80%;
+      background: rgba(128,0,0,0.82);
+      // opacity: 0.7;
+      z-index: 5;
+
+      &__item {
+        display: block;
+        padding-left: 0;
+      }
+      &__link {
+        display: block;
+        line-height: 1.8;
+        &:hover {
+          background: #cccccc;
+        }
+      }
+      &__opened {
+        display: block;
+        animation: fade_in_show 0.5s;
+        .menu__item {
+          text-align: center;
+        }
+      }
+
+    }
+
+    @keyframes fade_in_show {
+     0% {
+          opacity: 0;
+          transform: scale(0)
+     }
+     100% {
+          opacity: 1;
+          transform: scale(1)
+     }
+  }
+  }
+}
+
+@media screen and (max-width: $screen-small) {
+
+  .about-desc {
+    padding: 50px 0;
+    .about-textblock {
+      text-align: center;
+      &__imageblock {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .footer {
+    .footer__rights, .footer__socials {
+      width: 100%;
+      text-align: center;
+    }
+    .footer__rights {
+      margin-bottom: 30px;
+    }
+  }
+  .hero {
+    &__title {
+      font-size: 45px;
+    }
+  }
+  .technology {
+    &__title {
+      font-size: 35px;
+    }
+  }
+}

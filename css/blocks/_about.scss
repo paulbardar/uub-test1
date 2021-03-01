@@ -1,0 +1,122 @@
+
+.about-hero {
+    // padding: 100px 0;
+    background: #ED4C5C url("../img/about-hero-bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(213, 32, 71, 0.8) 0%, rgba(238, 61, 27, 0.8) 100%);
+    }
+    &__content {
+      position: relative;
+      z-index: 2;
+      padding: 150px 0;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      color: $whiteColor;
+    }
+    &__title {
+      text-transform: capitalize;
+    }
+    &__text {
+      font-size: 28px;
+    }
+}
+
+.about-desc {
+  padding: 100px 0;
+  .about-textblock {
+    max-width: 450px;
+    &__title {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-transform: capitalize;
+    }
+    &__imageblock {
+      max-width: 450px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
+
+    .about-aims {
+      .about-list {
+        list-style: none;
+        counter-reset: cupcake;
+        .about-list__item {
+          counter-increment: cupcake;
+        }
+        .about-list__item:before {
+          content: counters(cupcake, ".") ". ";
+        }
+      }
+    }
+  }
+}
+
+// Skills
+
+.about-skills {
+  padding: 65px 0 125px;
+  background: $secoindaryBgColor;
+  &__title {
+    @include section-title;
+    margin-bottom: 80px;
+  }
+
+  .skills-card {
+    position: relative;
+    padding-top: 48%;
+    padding-left: 8%;
+    padding-right: 8%;
+    &__img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &__text {
+      position: relative;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      background: $primaryBgColor;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    &__title {
+      margin-bottom: 16px;
+    }
+    &__desc {
+      margin-bottom: 25px;
+      font-size: $fsSecondary;
+    }
+    &__readmore {
+      color: $linkReadmoreColor;
+      &:hover {
+        text-decoration: none;
+        color: $linksHoverColor;
+      }
+    }
+    &__more {
+      .card-text {
+        display: none;
+      }
+
+      &.skills-card__moreOpened {
+        .card-text {
+          display: block;
+        }
+      }
+    }
+  }
+}
